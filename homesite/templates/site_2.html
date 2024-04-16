@@ -4,18 +4,11 @@
     <ul>
         {% for contact in contacts %}
         <li>{{contact}}</li>
-        <li>email: michal_zatorski@o2.pl</li>
-	    <li>telefon: 604 836 715</li>
         {% endfor %}
     </ul>
-<form>
+<form method="POST">
     <p><label for="element">Wyślij wiadomość</label></p>
     <textarea id="element" name="element" rows="4" cols="50"></textarea><br>
     <input type="submit" value="Prześlij"/>
 </form>
 {% endblock %}
-
-
-{% for item in items %}
-<li>{{item}}</li>
-{% endfor %}

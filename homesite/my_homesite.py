@@ -12,5 +12,5 @@ def mypage_contact():
     if request.method == 'GET':
         return render_template("site_2.html", contacts=contacts)  
     elif request.method == 'POST':
-       print(request.form)
-       return redirect("/mypage/contact")
+        print(request.form)
+        return redirect("/mypage/contact")
