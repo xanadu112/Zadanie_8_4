@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 class="first">Kontakt</h2>
+    <ul>
+        {% for contact in contact_details %}
+        <li>{{ contact }}</li>
+        {% endfor %}
+    </ul>
+    <form method="POST">
+        <p><label for="element">Wyślij wiadomość</label></p>
+        <textarea id="element" name="element" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Prześlij"/>
+    </form>
+{% endblock %}

@@ -3,14 +3,16 @@ from flask import Flask, request, redirect, render_template
 app = Flask(__name__)
 
 @app.route("/mypage/me", methods=['GET'])
-def mypage_me():
-    return render_template("site_1.html")
+def display_about_me():
+    return render_template("about_me.html")
 
 @app.route("/mypage/contact", methods=['GET', 'POST'])
-def mypage_contact():
-    contacts = ["email: michal_zatorski@o2.pl", "telefon: 604 836 715"]
+def display_contact():
+    contact_details = ["email: michal_zatorski@o2.pl", "telefon: 604 836 715"]
+    
     if request.method == 'GET':
-        return render_template("site_2.html", contacts=contacts)  
+        return render_template("contact.html", contact_details=contact_details)  
+    
     elif request.method == 'POST':
-        print(request.form)
+        print(request.form["element"])
         return redirect("/mypage/contact")
